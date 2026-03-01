@@ -324,7 +324,15 @@ export default function Home() {
       </section>
 
       {/* ── CTA SECTION ── */}
-      <section className="section bg-primary">
+      <section
+        className="section"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(10, 20, 60, 0.82), rgba(30, 64, 175, 0.88)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80&auto=format&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-white mb-4">Ready to Submit Your Paper?</h2>

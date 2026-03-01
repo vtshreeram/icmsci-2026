@@ -144,7 +144,15 @@ export default function CallForPaper() {
       <section className="section bg-white" style={{ paddingTop: "1rem" }}>
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <div className="card p-8 bg-primary text-white text-center">
+            <div
+              className="card p-8 text-white text-center overflow-hidden"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(10, 20, 60, 0.80), rgba(30, 64, 175, 0.86)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               <h3 className="h4 mb-3" style={{ color: "white" }}>Ready to Submit?</h3>
               <p className="text-blue-100 mb-6">Download the template and submit via email or visit the submission page.</p>
               <Link href="/submission" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
