@@ -42,7 +42,15 @@ export default function Publication() {
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(15, 23, 42, 0.80), rgba(30, 64, 175, 0.84)), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80&auto=format&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <div className="max-w-2xl animate-fade-in">
             <p className="section-label" style={{ color: "#93c5fd" }}>ICMSCI 2026</p>
