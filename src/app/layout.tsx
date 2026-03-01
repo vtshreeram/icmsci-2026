@@ -1,7 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import MobileNav from "./components/MobileNav";
+import NavLink from "./components/NavLink";
+
+export const metadata: Metadata = {
+  title: "ICMSCI 2026 | International Conference on Multi-Agent Systems",
+  description:
+    "Second International Conference on Multi-Agent Systems for Collaborative Intelligence — March 2–4, 2026, Erode, Tamil Nadu, India",
+};
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -33,72 +40,65 @@ export default function RootLayout({
                   <span className="text-white font-bold text-sm">ICM</span>
                 </div>
                 <div>
-                  <span className="text-slate-800 font-bold text-lg">ICMSCI</span>
-                  <span className="text-primary text-xs font-semibold ml-1">2026</span>
+                  <span className="text-slate-800 font-bold text-lg leading-none block">ICMSCI</span>
+                  <span className="text-primary text-xs font-semibold">2026</span>
                 </div>
               </Link>
-              
-              <div className="hidden lg:flex items-center gap-1">
+
+              <div className="hidden lg:flex items-center gap-0.5">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="nav-link text-sm"
-                  >
-                    {link.label}
-                  </Link>
+                  <NavLink key={link.href} href={link.href} label={link.label} />
                 ))}
               </div>
-              
+
               <div className="lg:hidden">
-                <select 
-                  onChange={(e) => window.location.href = e.target.value}
-                  className="bg-white text-slate-700 text-sm px-3 py-2 rounded-lg border border-slate-300"
-                >
-                  {navLinks.map((link) => (
-                    <option key={link.href} value={link.href}>
-                      {link.label}
-                    </option>
-                  ))}
-                </select>
+                <MobileNav />
               </div>
             </div>
           </div>
         </nav>
 
-        <main className="pt-16 min-h-screen bg-slate-50">
-          {children}
-        </main>
+        <main className="pt-16 min-h-screen">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-primary text-white mt-20">
+        <footer className="bg-primary text-white">
           <div className="container py-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div>
-                <h3 className="font-bold text-lg mb-3">ICMSCI 2026</h3>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">ICM</span>
+                  </div>
+                  <h3 className="font-bold text-lg text-white">ICMSCI 2026</h3>
+                </div>
                 <p className="text-blue-200 text-sm leading-relaxed">
                   Second International Conference on Multi-Agent Systems for Collaborative Intelligence
                 </p>
-                <p className="text-blue-200 text-sm mt-2">March 2-4, 2026 | Erode, Tamil Nadu, India</p>
+                <p className="text-blue-300 text-sm mt-2">March 2–4, 2026 · Erode, Tamil Nadu, India</p>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-3">Quick Links</h3>
-                <div className="flex flex-col gap-2">
+                <h3 className="font-semibold text-base mb-3 text-white">Quick Links</h3>
+                <div className="flex flex-col gap-1.5">
                   <Link href="/call-for-paper" className="text-blue-200 hover:text-white text-sm transition-colors">Call for Papers</Link>
                   <Link href="/submission" className="text-blue-200 hover:text-white text-sm transition-colors">Paper Submission</Link>
                   <Link href="/registration" className="text-blue-200 hover:text-white text-sm transition-colors">Registration</Link>
-                  <Link href="/speakers" className="text-blue-200 hover:text-white text-sm transition-colors">Speakers</Link>
+                  <Link href="/speakers" className="text-blue-200 hover:text-white text-sm transition-colors">Keynote Speakers</Link>
+                  <Link href="/presentation-schedule" className="text-blue-200 hover:text-white text-sm transition-colors">Schedule</Link>
                 </div>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-3">Contact Us</h3>
+                <h3 className="font-semibold text-base mb-3 text-white">Contact</h3>
                 <p className="text-blue-200 text-sm">icmsciconference@gmail.com</p>
-                <p className="text-blue-200 text-sm mt-1">Surya Engineering College</p>
-                <p className="text-blue-200 text-sm">Erode, Tamil Nadu 638107, India</p>
+                <p className="text-blue-200 text-sm mt-1">+91-9789653809</p>
+                <div className="mt-3">
+                  <p className="text-blue-300 text-sm">Surya Engineering College</p>
+                  <p className="text-blue-300 text-sm">Erode, Tamil Nadu 638107, India</p>
+                </div>
               </div>
             </div>
-            <div className="border-t border-blue-700 mt-8 pt-8 text-center">
-              <p className="text-blue-300 text-sm">© 2026 ICMSCI. All rights reserved. | Organized by Surya Engineering College</p>
+            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+              <p className="text-blue-300 text-sm">© 2026 ICMSCI. All rights reserved.</p>
+              <p className="text-blue-400 text-xs">Organized by Surya Engineering College · In partnership with IEEE</p>
             </div>
           </div>
         </footer>

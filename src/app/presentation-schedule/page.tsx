@@ -1,166 +1,157 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Presentation Schedule | ICMSCI 2026",
+  description: "Conference presentation schedule for ICMSCI 2026 — March 2–4, 2026.",
+};
+
+const days = [
+  {
+    label: "Day 01",
+    date: "02 March 2026",
+    badgeStyle: { background: "#dbeafe", color: "#1e40af" },
+    timeStyle: { color: "#1e40af" },
+    events: [
+      { time: "09:30 – 10:30 AM", activity: "Inauguration & Keynote Talk – 1" },
+      { time: "10:30 – 01:00 PM", activity: "Session 1" },
+      { time: "01:00 – 02:00 PM", activity: "Lunch Break" },
+      { time: "02:00 – 04:00 PM", activity: "Session 2" },
+      { time: "04:00 – 05:30 PM", activity: "Session 3" },
+    ],
+  },
+  {
+    label: "Day 02",
+    date: "03 March 2026",
+    badgeStyle: { background: "#fef3c7", color: "#92400e" },
+    timeStyle: { color: "#d97706" },
+    events: [
+      { time: "09:00 – 01:00 PM", activity: "Session 4" },
+      { time: "01:00 – 02:00 PM", activity: "Lunch Break" },
+      { time: "02:00 – 04:00 PM", activity: "Session 5" },
+      { time: "04:00 – 05:30 PM", activity: "Session 6" },
+    ],
+  },
+  {
+    label: "Day 03",
+    date: "04 March 2026",
+    badgeStyle: { background: "#dcfce7", color: "#15803d" },
+    timeStyle: { color: "#059669" },
+    events: [
+      { time: "09:00 – 01:00 PM", activity: "Session 7" },
+      { time: "01:00 – 02:00 PM", activity: "Lunch Break" },
+      { time: "02:00 – 04:00 PM", activity: "Session 8" },
+      { time: "04:00 – 05:30 PM", activity: "Session 9 & Valedictory" },
+    ],
+  },
+];
+
+const papers = [
+  { id: "ICMSCI-405",  title: "Autonomous Underwater Vehicle for Real-Time Pipeline Defect Detection",             authors: "J. Jaiganesh, Renoye R, Mohamed N S",                           day: 1, session: 1, time: "10:30 – 10:50 AM" },
+  { id: "ICMSCI-898",  title: "Resilient Multi-Modal IoT Crowd Monitoring System with Self-Healing Sensor Architecture", authors: "S. Ramesh, B. Rohith, K. Chetananand, R. Manikandan",       day: 1, session: 1, time: "10:50 – 11:10 AM" },
+  { id: "ICMSCI-366",  title: "Simulating Emergency Teamwork Behavior with Multi-Agent LLMs",                     authors: "Atsushi Shimoda, Rei Kobori, Keito Takahashi, Zhang Yatong",   day: 1, session: 1, time: "11:10 – 11:30 AM" },
+  { id: "ICMSCI-992",  title: "Temporal Artifact Analysis for AI-Generated Video Detection",                      authors: "Vijayakumar S D, Karunakaran P, Balasubramaniam C",             day: 1, session: 1, time: "11:30 – 11:50 AM" },
+  { id: "ICMSCI-1089", title: "Automated NLP-Powered Reporting for Colon Cancer Diagnosis",                       authors: "T A Mohanaprakash, Lohit S, Rakshan M",                         day: 1, session: 1, time: "11:50 AM – 12:10 PM" },
+  { id: "ICMSCI-998",  title: "Plant Disease Prediction Using Ensemble Risk Scoring Engine",                       authors: "Pavithra P, Sukumar P",                                         day: 1, session: 1, time: "12:10 – 12:30 PM" },
+  { id: "ICMSCI-797",  title: "The Smart Fall Detection and Emergency Alert System",                               authors: "Shankar R, Avishkar G, Mohamed Irfan S",                        day: 1, session: 1, time: "12:30 – 12:50 PM" },
+  { id: "ICMSCI-787",  title: "Latent Regime-Aware Market Prediction Using Stacked LSTM",                         authors: "Amudha L, Vishal V S, Manoj N",                                 day: 1, session: 2, time: "02:00 – 02:20 PM" },
+  { id: "ICMSCI-774",  title: "Robust Real-Time Respiratory Rate Estimation Using Wi-Fi CSI",                     authors: "S K Manikandan, M Nisha Angeline, V Suganya",                   day: 1, session: 2, time: "02:20 – 02:40 PM" },
+  { id: "ICMSCI-1048", title: "Smart Battery Management System for Electric Vehicles",                             authors: "Ramraj B, Rajesh S, Indra Kumar M",                              day: 1, session: 2, time: "02:40 – 03:00 PM" },
+  { id: "ICMSCI-820",  title: "PATHFINDER: Intelligent Footwear for the Blind",                                   authors: "Preethi S, Chithrida M P, Dharani M",                            day: 1, session: 2, time: "03:00 – 03:20 PM" },
+  { id: "ICMSCI-709",  title: "Shape Memory Alloy Spring-Actuator Using Spread Spectrum PWM",                     authors: "K. Muralidharan, G. Muthukumaran",                              day: 1, session: 2, time: "03:20 – 03:40 PM" },
+];
+
 export default function PresentationSchedule() {
-  const schedule = {
-    day1: {
-      date: "02 March 2026",
-      title: "Day 01",
-      events: [
-        { time: "09:30 – 10:30 AM", activity: "Inauguration & Keynote Talk - 1" },
-        { time: "10:30 – 01:00 PM", activity: "Session - 1" },
-        { time: "01:00 – 02:00 PM", activity: "Lunch" },
-        { time: "02:00 – 04:00 PM", activity: "Session - 2" },
-        { time: "04:00 – 05:30 PM", activity: "Session - 3" },
-      ],
-    },
-    day2: {
-      date: "03 March 2026",
-      title: "Day 02",
-      events: [
-        { time: "09:00 – 01:00 PM", activity: "Session - 4" },
-        { time: "01:00 – 02:00 PM", activity: "Lunch" },
-        { time: "02:00 – 04:00 PM", activity: "Session - 5" },
-        { time: "04:00 – 05:30 PM", activity: "Session - 6" },
-      ],
-    },
-    day3: {
-      date: "04 March 2026",
-      title: "Day 03",
-      events: [
-        { time: "09:00 – 01:00 PM", activity: "Session - 7" },
-        { time: "01:00 – 02:00 PM", activity: "Lunch" },
-        { time: "02:00 – 04:00 PM", activity: "Session - 8" },
-        { time: "04:00 – 05:30 PM", activity: "Session - 9" },
-      ],
-    },
-  };
-
-  const papers = [
-    { id: "ICMSCI-405", title: "Autonomous Underwater Vehicle for Real-Time Pipeline Defect Detection", authors: "J Jaiganesh, Renoye R, Mohamed N S", time: "10:30 AM - 10:50 AM", day: 1, session: 1 },
-    { id: "ICMSCI-898", title: "Resilient Multi-Modal IoT Crowd Monitoring System with Self-Healing Sensor Architecture", authors: "S. Ramesh, B. Rohith, K. Chetananand, R. Manikandan", time: "10:50 AM - 11:10 AM", day: 1, session: 1 },
-    { id: "ICMSCI-366", title: "Simulating Emergency Teamwork Behavior with Multi-Agent LLMs", authors: "Atsushi Shimoda, Rei Kobori, Keito Takahashi, Zhang Yatong", time: "11:10 AM - 11:30 AM", day: 1, session: 1 },
-    { id: "ICMSCI-992", title: "Temporal Artifact Analysis for AI-Generated Video Detection", authors: "Vijayakumar S D, Karunakaran P, Balasubramaniam C", time: "11:30 AM - 11:50 AM", day: 1, session: 1 },
-    { id: "ICMSCI-1089", title: "Automated NLP-Powered Reporting for Colon Cancer Diagnosis", authors: "T A Mohanaprakash, Lohit S, Rakshan M", time: "11:50 AM - 12:10 PM", day: 1, session: 1 },
-    { id: "ICMSCI-998", title: "Plant Disease Prediction Using Ensemble Risk Scoring Engine", authors: "Pavithra P, Sukumar P", time: "12:10 PM - 12:30 PM", day: 1, session: 1 },
-    { id: "ICMSCI-797", title: "The Smart Fall Detection and Emergency Alert System", authors: "Shankar R, Avishkar G, Mohamed Irfan S", time: "12:30 PM - 12:50 PM", day: 1, session: 1 },
-    { id: "ICMSCI-787", title: "Latent Regime-Aware Market Prediction Using Stacked LSTM", authors: "Amudha L, Vishal V S, Manoj N", time: "02:00 PM - 02:20 PM", day: 1, session: 2 },
-    { id: "ICMSCI-774", title: "Robust Real-Time Respiratory Rate Estimation using Wi-Fi CSI", authors: "S K Manikandan, M Nisha Angeline, V Suganya", time: "02:20 PM - 02:40 PM", day: 1, session: 2 },
-    { id: "ICMSCI-1048", title: "Smart Battery Management System for Electric Vehicles", authors: "Ramraj B, Rajesh S, Indra kumar M", time: "02:40 PM - 03:00 PM", day: 1, session: 2 },
-    { id: "ICMSCI-820", title: "PATHFINDER: Intelligent Footwear for the Blind", authors: "PREETHI S, CHITHRIDA M P, DHARANI M", time: "03:00 PM - 03:20 PM", day: 1, session: 2 },
-    { id: "ICMSCI-709", title: "Shape Memory Alloy Spring-Actuator using Spread Spectrum PWM", authors: "K.Muralidharan, G. Muthukumaran", time: "03:20 PM - 03:40 PM", day: 1, session: 2 },
-  ];
-
   return (
-    <div className="min-h-screen py-12 px-4 bg-slate-50">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-slate-800">Presentation Schedule</h1>
-          <p className="text-slate-600 mt-2">ICMSCI 2026 | March 2-4, 2026</p>
+    <div className="min-h-screen">
+      {/* Page Header */}
+      <section className="page-header">
+        <div className="container">
+          <div className="max-w-2xl animate-fade-in">
+            <p className="section-label" style={{ color: "#93c5fd" }}>ICMSCI 2026</p>
+            <h1 className="mb-4">Presentation Schedule</h1>
+            <p className="text-blue-100 body-lg">
+              March 2–4, 2026 · 20-minute slots · PowerPoint format
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="card p-5 mb-8">
-          <div className="flex flex-wrap items-center justify-center gap-6">
+      {/* Info bar */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="container py-4">
+          <div className="flex flex-wrap gap-6">
             <div className="flex items-center gap-2">
-              <span className="text-slate-600">Presentation Time:</span>
-              <span className="text-slate-800 font-medium">20 Minutes</span>
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="small"><strong className="text-slate-700">Duration:</strong> 20 minutes per paper</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-slate-600">Format:</span>
-              <span className="text-slate-800 font-medium">PPT (PowerPoint)</span>
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span className="small"><strong className="text-slate-700">Format:</strong> PowerPoint (PPT)</span>
             </div>
           </div>
-        </div>
-
-        {/* Day 1 */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="px-4 py-2 bg-blue-100 rounded-lg">
-              <span className="text-blue-800 font-semibold">Day 01</span>
-            </div>
-            <span className="text-slate-600">02 March 2026</span>
-          </div>
-          <div className="space-y-2">
-            {schedule.day1.events.map((event, idx) => (
-              <div key={idx} className="card p-4 flex flex-col md:flex-row md:items-center gap-2">
-                <div className="md:w-48 flex-shrink-0">
-                  <span className="text-blue-800 font-medium">{event.time}</span>
-                </div>
-                <div className="flex-1">
-                  <span className="text-slate-800 font-medium">{event.activity}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Day 2 */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="px-4 py-2 bg-amber-100 rounded-lg">
-              <span className="text-amber-700 font-semibold">Day 02</span>
-            </div>
-            <span className="text-slate-600">03 March 2026</span>
-          </div>
-          <div className="space-y-2">
-            {schedule.day2.events.map((event, idx) => (
-              <div key={idx} className="card p-4 flex flex-col md:flex-row md:items-center gap-2">
-                <div className="md:w-48 flex-shrink-0">
-                  <span className="text-amber-700 font-medium">{event.time}</span>
-                </div>
-                <div className="flex-1">
-                  <span className="text-slate-800 font-medium">{event.activity}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Day 3 */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="px-4 py-2 bg-blue-100 rounded-lg">
-              <span className="text-blue-800 font-semibold">Day 03</span>
-            </div>
-            <span className="text-slate-600">04 March 2026</span>
-          </div>
-          <div className="space-y-2">
-            {schedule.day3.events.map((event, idx) => (
-              <div key={idx} className="card p-4 flex flex-col md:flex-row md:items-center gap-2">
-                <div className="md:w-48 flex-shrink-0">
-                  <span className="text-blue-800 font-medium">{event.time}</span>
-                </div>
-                <div className="flex-1">
-                  <span className="text-slate-800 font-medium">{event.activity}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Paper Presentations */}
-        <div className="card p-6">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Paper Presentations</h2>
-          <div className="space-y-3">
-            {papers.map((paper, idx) => (
-              <div key={idx} className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-blue-300 transition-colors">
-                <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-4">
-                  <div className="md:w-32 flex-shrink-0">
-                    <span className="text-blue-800 font-bold text-sm">{paper.id}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-slate-800 font-medium mb-1">{paper.title}</h4>
-                    <p className="text-slate-500 text-sm mb-1">{paper.authors}</p>
-                    <span className="text-amber-600 text-sm font-medium">
-                      Day {paper.day} | Session {paper.session} | {paper.time}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-slate-500 text-sm mt-5 text-center">
-            * Showing selected papers. Full schedule available in conference proceedings.
-          </p>
         </div>
       </div>
+
+      <section className="section bg-slate-50">
+        <div className="container">
+          <div className="max-w-4xl mx-auto space-y-8">
+
+            {/* Day Schedules */}
+            {days.map((day) => (
+              <div key={day.label}>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="timeline-day-badge" style={day.badgeStyle}>{day.label}</span>
+                  <span className="small font-medium text-slate-500">{day.date}</span>
+                </div>
+                <div className="space-y-2">
+                  {day.events.map((event, idx) => (
+                    <div key={idx} className="schedule-row">
+                      <span className="schedule-time md:w-44 flex-shrink-0" style={day.timeStyle}>
+                        {event.time}
+                      </span>
+                      <span className="text-slate-700 font-medium">{event.activity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            {/* Paper Presentations */}
+            <div className="card overflow-hidden">
+              <div className="px-7 py-5 border-b border-slate-100 bg-slate-50">
+                <h3 className="h4">Paper Presentations</h3>
+                <p className="small mt-1">Selected papers · Full schedule in conference proceedings</p>
+              </div>
+              <div className="divide-y divide-slate-100">
+                {papers.map((paper, idx) => (
+                  <div
+                    key={idx}
+                    className="p-5 hover:bg-slate-50 transition-colors"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-5">
+                      <div className="flex-shrink-0">
+                        <span className="badge badge-blue">{paper.id}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-slate-800 leading-snug mb-1">{paper.title}</p>
+                        <p className="small mb-2">{paper.authors}</p>
+                        <p className="caption">
+                          Day {paper.day} · Session {paper.session} · {paper.time}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
