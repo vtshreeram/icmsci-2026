@@ -26,15 +26,15 @@ export default function RootLayout({
       <body className="antialiased">
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container">
             <div className="flex items-center justify-between h-16">
-              <Link href="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-blue-800 flex items-center justify-center">
+              <Link href="/" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
                   <span className="text-white font-bold text-sm">ICM</span>
                 </div>
                 <div>
                   <span className="text-slate-800 font-bold text-lg">ICMSCI</span>
-                  <span className="text-blue-600 text-xs font-semibold ml-1">2026</span>
+                  <span className="text-primary text-xs font-semibold ml-1">2026</span>
                 </div>
               </Link>
               
@@ -71,8 +71,8 @@ export default function RootLayout({
         </main>
 
         {/* Footer */}
-        <footer className="bg-blue-800 text-white mt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <footer className="bg-primary text-white mt-20">
+          <div className="container py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="font-bold text-lg mb-3">ICMSCI 2026</h3>
