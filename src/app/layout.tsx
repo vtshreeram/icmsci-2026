@@ -71,34 +71,34 @@ export default function RootLayout({
         </main>
 
         {/* Footer */}
-        <footer className="bg-slate-800 text-white mt-20">
+        <footer className="bg-blue-800 text-white mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="font-bold text-lg mb-3">ICMSCI 2026</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <p className="text-blue-200 text-sm leading-relaxed">
                   Second International Conference on Multi-Agent Systems for Collaborative Intelligence
                 </p>
-                <p className="text-slate-400 text-sm mt-2">March 2-4, 2026 | Erode, Tamil Nadu, India</p>
+                <p className="text-blue-200 text-sm mt-2">March 2-4, 2026 | Erode, Tamil Nadu, India</p>
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-3">Quick Links</h3>
                 <div className="flex flex-col gap-2">
-                  <Link href="/call-for-paper" className="text-slate-400 hover:text-white text-sm transition-colors">Call for Papers</Link>
-                  <Link href="/submission" className="text-slate-400 hover:text-white text-sm transition-colors">Paper Submission</Link>
-                  <Link href="/registration" className="text-slate-400 hover:text-white text-sm transition-colors">Registration</Link>
-                  <Link href="/speakers" className="text-slate-400 hover:text-white text-sm transition-colors">Speakers</Link>
+                  <Link href="/call-for-paper" className="text-blue-200 hover:text-white text-sm transition-colors">Call for Papers</Link>
+                  <Link href="/submission" className="text-blue-200 hover:text-white text-sm transition-colors">Paper Submission</Link>
+                  <Link href="/registration" className="text-blue-200 hover:text-white text-sm transition-colors">Registration</Link>
+                  <Link href="/speakers" className="text-blue-200 hover:text-white text-sm transition-colors">Speakers</Link>
                 </div>
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-3">Contact Us</h3>
-                <p className="text-slate-400 text-sm">icmsciconference@gmail.com</p>
-                <p className="text-slate-400 text-sm mt-1">Surya Engineering College</p>
-                <p className="text-slate-400 text-sm">Erode, Tamil Nadu 638107, India</p>
+                <p className="text-blue-200 text-sm">icmsciconference@gmail.com</p>
+                <p className="text-blue-200 text-sm mt-1">Surya Engineering College</p>
+                <p className="text-blue-200 text-sm">Erode, Tamil Nadu 638107, India</p>
               </div>
             </div>
-            <div className="border-t border-slate-700 mt-8 pt-8 text-center">
-              <p className="text-slate-500 text-sm">© 2026 ICMSCI. All rights reserved. | Organized by Surya Engineering College</p>
+            <div className="border-t border-blue-700 mt-8 pt-8 text-center">
+              <p className="text-blue-300 text-sm">© 2026 ICMSCI. All rights reserved. | Organized by Surya Engineering College</p>
             </div>
           </div>
         </footer>
